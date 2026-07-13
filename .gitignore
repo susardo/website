@@ -1,0 +1,6 @@
+# Local-only source assets — do NOT publish
+assets/photo_full.jpg
+
+# OS / editor cruft
+.DS_Store
+*.swp

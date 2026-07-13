@@ -1,0 +1,110 @@
+/* Sulin Sardoschau — personal site
+   Minimal, text-first, fast. No external dependencies. */
+
+:root {
+  --ink: #1a1a1a;
+  --muted: #6b6b6b;
+  --line: #e6e6e6;
+  --link: #7a1f2b;        /* deep maroon accent */
+  --link-hover: #a83244;
+  --maxw: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+/* ---- Header / name ---- */
+.site-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.15rem;
+}
+.site-name a { color: var(--ink); text-decoration: none; }
+.site-title {
+  color: var(--muted);
+  font-size: 1rem;
+  margin: 0 0 1.25rem;
+}
+
+/* ---- Navigation ---- */
+nav {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 0.6rem 0;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  margin-right: 1.1rem;
+}
+nav a:hover { color: var(--link); }
+nav a.active { color: var(--link); font-weight: 600; }
+
+/* ---- Links ---- */
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+
+/* ---- Landing ---- */
+.intro { display: flex; gap: 1.5rem; align-items: flex-start; }
+.intro img {
+  width: 170px; height: auto;
+  border-radius: 4px; flex-shrink: 0;
+}
+.intro .lede p { margin-top: 0; }
+@media (max-width: 560px) {
+  .intro { flex-direction: column; }
+  .intro img { width: 150px; }
+}
+
+/* ---- Sections ---- */
+h2 {
+  font-size: 1.15rem;
+  margin: 2.25rem 0 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ---- Paper list ---- */
+.papers { list-style: none; padding: 0; margin: 0; }
+.papers li { margin: 0 0 1.4rem; }
+.papers .ptitle { font-weight: 600; }
+.papers .pmeta { color: var(--muted); font-size: 0.95rem; }
+.papers .plinks { font-size: 0.9rem; margin-top: 0.15rem; }
+.papers .status { color: var(--link); font-style: italic; }
+
+/* ---- Minimalist writing list (Policy page) ---- */
+.writing { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.writing li { margin: 0 0 0.7rem; }
+.writing .yr { color: var(--muted); }
+
+/* ---- Footer contact row ---- */
+.contact {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.contact a { color: var(--muted); }
+.contact a:hover { color: var(--link); }

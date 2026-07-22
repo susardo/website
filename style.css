@@ -90,8 +90,35 @@ h2 {
 .papers li { margin: 0 0 1.4rem; }
 .papers .ptitle { font-weight: 600; }
 .papers .pmeta { color: var(--muted); font-size: 0.95rem; }
+/* Coauthor name links: look identical to the surrounding meta text, just clickable. */
+.papers .pmeta a { color: var(--muted); text-decoration: none; }
+.papers .pmeta a:hover { color: var(--muted); text-decoration: underline; }
 .papers .plinks { font-size: 0.9rem; margin-top: 0.15rem; }
 .papers .status { color: var(--link); font-style: italic; }
+
+/* Abstract toggle — <details> styled to sit inline with the PDF/Journal links.
+   No JS: native disclosure widget, works with keyboard and without scripting. */
+.papers details { display: inline; }
+.papers details > summary {
+  display: inline;
+  list-style: none;          /* hide default triangle (Firefox) */
+  cursor: pointer;
+  color: var(--link);
+}
+.papers details > summary::-webkit-details-marker { display: none; }  /* Safari/Chrome */
+.papers details > summary:hover { color: var(--link-hover); text-decoration: underline; }
+.papers details[open] > summary { font-weight: 600; }
+.papers .abstract {
+  display: block;
+  margin: 0.5rem 0 0.2rem;
+  padding-left: 0.85rem;
+  border-left: 2px solid var(--line);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #333;
+  text-align: justify;
+  hyphens: auto;
+}
 
 /* ---- Minimalist writing list (Policy page) ---- */
 .writing { list-style: none; padding: 0; margin: 1.5rem 0 0; }
